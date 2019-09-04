@@ -15,8 +15,8 @@ config.JobType.scriptExe = "./test.sh"
 
 config.Data.outputPrimaryDataset = "DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8"
 config.Data.splitting = "EventBased"
-config.Data.unitsPerJob = 10
-config.Data.totalUnits = 100
+config.Data.unitsPerJob = 1000
+config.Data.totalUnits = 100000
 config.Data.outLFNDirBase = "/store/user/%s/private_mc" % (getUsernameFromSiteDB())
 config.Data.publication = True
 config.Data.publishDBS = "phys03"

@@ -1,15 +1,15 @@
 from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 config = config()
 
-config.General.requestName = "my_gensim_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8"
-config.General.workArea = "./crab_workarea"
+config.General.requestName = "my_gensim_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_TauDecays_externalMode_0"
+config.General.workArea = "./crab_workarea_TauDecays_externalMode_0"
 config.General.transferOutputs = True
 config.General.transferLogs = True
 
 config.User.voGroup = "dcms"
 
 config.JobType.pluginName = "Analysis"
-config.JobType.psetName = "SUS-RunIISummer15GS-00148_1_cfg.py"
+config.JobType.psetName = "SUS-RunIISummer15GS-00148_1_TauDecays_externalMode_0_cfg.py"
 config.JobType.inputFiles = ["test.sh"]
 config.JobType.scriptExe = "./test.sh"
 
@@ -21,6 +21,6 @@ config.Data.unitsPerJob = 2
 config.Data.outLFNDirBase = "/store/user/%s/private_mc" % (getUsernameFromSiteDB())
 config.Data.publication = True
 config.Data.publishDBS = "phys03"
-config.Data.outputDatasetTag = "RunIISummer15GS-MCRUN2_71_V1_ext1-v1"
+config.Data.outputDatasetTag = "RunIISummer15GS-MCRUN2_71_V1_ext1-v1_TauDecays_externalMode_0"
 
 config.Site.storageSite = "T2_DE_RWTH"

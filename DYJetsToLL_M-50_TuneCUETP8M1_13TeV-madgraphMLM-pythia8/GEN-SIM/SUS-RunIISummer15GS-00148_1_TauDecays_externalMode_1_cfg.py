@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py --filein file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10
+# with command line options: Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment_TauDecays_externalMode_1.py --filein file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('SIM')
@@ -43,7 +43,7 @@ process.options = cms.untracked.PSet(
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
     version = cms.untracked.string('$Revision: 1.19 $'),
-    annotation = cms.untracked.string('Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py nevts:10'),
+    annotation = cms.untracked.string('Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment_TauDecays_externalMode_1.py nevts:10'),
     name = cms.untracked.string('Applications')
 )
 
@@ -102,7 +102,8 @@ process.generator = cms.EDFilter("Pythia8HadronizerFilter",
             'JetMatching:nQmatch = 5', 
             'JetMatching:nJetMax = 4', 
             'JetMatching:doShowerKt = off', 
-            'TimeShower:mMaxGamma = 4.0'),
+            'TimeShower:mMaxGamma = 4.0', 
+            'TauDecays:externalMode = 1'),
         parameterSets = cms.vstring('pythia8CommonSettings', 
             'pythia8CUEP8M1Settings', 
             'processParameters')

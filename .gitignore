@@ -4,5 +4,5 @@
 CMSSW_*
 *.xml
 *.log
-crab_workarea
+crab_workarea*
 *.txt

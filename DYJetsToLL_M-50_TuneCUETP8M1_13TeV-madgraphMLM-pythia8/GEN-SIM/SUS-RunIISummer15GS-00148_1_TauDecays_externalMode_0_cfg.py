@@ -70,6 +70,47 @@ process.genstepfilter.triggerConditions=cms.vstring("generation_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'MCRUN2_71_V1::All', '')
 
+process.generator = cms.EDFilter("Pythia8HadronizerFilter",
+    pythiaPylistVerbosity = cms.untracked.int32(1),
+    filterEfficiency = cms.untracked.double(1.0),
+    pythiaHepMCVerbosity = cms.untracked.bool(False),
+    comEnergy = cms.double(13000.0),
+    maxEventsToPrint = cms.untracked.int32(1),
+    PythiaParameters = cms.PSet(
+        pythia8CommonSettings = cms.vstring('Tune:preferLHAPDF = 2', 
+            'Main:timesAllowErrors = 10000', 
+            'Check:epTolErr = 0.01', 
+            'Beams:setProductionScalesFromLHEF = off', 
+            'SLHA:keepSM = on', 
+            'SLHA:minMassSM = 1000.', 
+            'ParticleDecays:limitTau0 = on', 
+            'ParticleDecays:tau0Max = 10', 
+            'ParticleDecays:allowPhotonRadiation = on'),
+        pythia8CUEP8M1Settings = cms.vstring('Tune:pp 14', 
+            'Tune:ee 7', 
+            'MultipartonInteractions:pT0Ref=2.4024', 
+            'MultipartonInteractions:ecmPow=0.25208', 
+            'MultipartonInteractions:expPow=1.6'),
+        processParameters = cms.vstring('JetMatching:setMad = off', 
+            'JetMatching:scheme = 1', 
+            'JetMatching:merge = on', 
+            'JetMatching:jetAlgorithm = 2', 
+            'JetMatching:etaJetMax = 5.', 
+            'JetMatching:coneRadius = 1.', 
+            'JetMatching:slowJetPower = 1', 
+            'JetMatching:qCut = 19.', 
+            'JetMatching:nQmatch = 5', 
+            'JetMatching:nJetMax = 4', 
+            'JetMatching:doShowerKt = off', 
+            'TimeShower:mMaxGamma = 4.0', 
+            'TauDecays:externalMode = 0'),
+        parameterSets = cms.vstring('pythia8CommonSettings', 
+            'pythia8CUEP8M1Settings', 
+            'processParameters')
+    )
+)
+
+
 # Path and EndPath definitions
 process.generation_step = cms.Path(process.pgen)
 process.simulation_step = cms.Path(process.psim)
@@ -79,6 +120,9 @@ process.RAWSIMoutput_step = cms.EndPath(process.RAWSIMoutput)
 
 # Schedule definition
 process.schedule = cms.Schedule(process.generation_step,process.genfiltersummary_step,process.simulation_step,process.endjob_step,process.RAWSIMoutput_step)
+# filter all path with the production filter sequence
+for path in process.paths:
+	getattr(process,path)._seq = process.generator * getattr(process,path)._seq 
 
 # customisation of the process.
 

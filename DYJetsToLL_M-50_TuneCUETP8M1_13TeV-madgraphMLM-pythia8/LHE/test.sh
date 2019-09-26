@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#gfal-copy -f srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=/pnfs/physik.rwth-aachen.de/cms//store/user/tmuller/private_mc/gridpacks/2017/13TeV/DYJets_HT_LO_MLM/DYJets_HT_mll50/DYJets_HT-incl/DYJets_HT-incl_tarball.tar.xz DYJets_HT-incl_tarball.tar.xz
+gfal-copy -f srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=/pnfs/physik.rwth-aachen.de/cms//store/user/tmuller/private_mc/gridpacks/2017/13TeV/DYJets_HT_LO_MLM/DYJets_HT_mll50/DYJets_HT-incl/DYJets_HT-incl_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz DYJets_HT-incl_tarball.tar.xz
+ls -l
+
 REQUEST=SUS-RunIIWinter15wmLHE-00098
 #wget --quiet https://raw.githubusercontent.com/cms-sw/genproductions/master/bin/utils/request_fragment_check.py
 #python request_fragment_check.py --bypass_status --prepid $REQUEST
@@ -25,16 +29,21 @@ eval `scram runtime -sh`
 curl -s --insecure https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/SUS-RunIIWinter15wmLHE-00098 --retry 2 --create-dirs -o Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py 
 [ -s Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py ] || exit $?;
 
-if grep -q "gridpacks" Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py; then
-  if ! grep -q "/cvmfs/cms.cern.ch/phys_generator/gridpacks" Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py; then
-     echo "Gridpack inside fragment is not in cvmfs."
-    exit -1
-  fi
-fi
+#if grep -q "gridpacks" Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py; then
+#  if ! grep -q "/cvmfs/cms.cern.ch/phys_generator/gridpacks" Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py; then
+#     echo "Gridpack inside fragment is not in cvmfs."
+#    exit -1
+#  fi
+#fi
 
 scram b
 cd ../../
+
 cmsDriver.py Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py --fileout file:SUS-RunIIWinter15wmLHE-00098.root --mc --eventcontent LHE --datatier LHE --conditions MCRUN2_71_V1::All --step LHE --python_filename SUS-RunIIWinter15wmLHE-00098_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10 || exit $? ; 
+
+sed -ie "s@/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2/DYJets_HT_LO_MLM/DYJets_HT-incl/V1/@../@g" $CMSSW_BASE/src/Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py
+sed -ie "s@/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/madgraph/V5_2.2.2/DYJets_HT_LO_MLM/DYJets_HT-incl/V1/@../@g" SUS-RunIIWinter15wmLHE-00098_1_cfg.py
+
 #cmsRun -e -j SUS-RunIIWinter15wmLHE-00098_rt.xml SUS-RunIIWinter15wmLHE-00098_1_cfg.py || exit $? ; 
 cmsRun -e -j SUS-RunIIWinter15wmLHE-00098_rt.xml -p PSet.py || exit $? ; 
 cp SUS-RunIIWinter15wmLHE-00098_rt.xml FrameworkJobReport.xml

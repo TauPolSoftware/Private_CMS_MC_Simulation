@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py --fileout file:SUS-RunIIWinter15wmLHE-00098.root --mc --eventcontent LHE --datatier LHE --conditions MCRUN2_71_V1::All --step LHE --python_filename SUS-RunIIWinter15wmLHE-00098_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 1000
+# with command line options: Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py --fileout file:SUS-RunIIWinter15wmLHE-00098.root --mc --eventcontent LHE --datatier LHE --conditions MCRUN2_71_V1::All --step LHE --python_filename SUS-RunIIWinter15wmLHE-00098_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('LHE')
@@ -19,7 +19,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1000)
+    input = cms.untracked.int32(10)
 )
 
 # Input source
@@ -32,7 +32,7 @@ process.options = cms.untracked.PSet(
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
     version = cms.untracked.string('$Revision: 1.19 $'),
-    annotation = cms.untracked.string('Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py nevts:1000'),
+    annotation = cms.untracked.string('Configuration/GenProduction/python/SUS-RunIIWinter15wmLHE-00098-fragment.py nevts:10'),
     name = cms.untracked.string('Applications')
 )
 
@@ -56,7 +56,7 @@ from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'MCRUN2_71_V1::All', '')
 
 process.externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    nEvents = cms.untracked.uint32(1000),
+    nEvents = cms.untracked.uint32(10),
     outputFile = cms.string('cmsgrid_final.lhe'),
     scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_cvmfs.sh'),
     numberOfParameters = cms.uint32(1),

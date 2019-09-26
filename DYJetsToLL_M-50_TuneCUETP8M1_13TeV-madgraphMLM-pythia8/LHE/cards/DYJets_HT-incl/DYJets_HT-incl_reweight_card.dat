@@ -1,0 +1,308 @@
+#******************************************************************
+#                       Reweight Module                           *
+#******************************************************************
+change rwgt_dir rwgt
+
+launch --rwgt_name=gf_weight_0p75Em5
+	set Gf 0.75e-5
+
+launch --rwgt_name=gf_weight_0p76Em5
+	set Gf 0.76e-5
+
+launch --rwgt_name=gf_weight_0p77Em5
+	set Gf 0.77e-5
+
+launch --rwgt_name=gf_weight_0p78Em5
+	set Gf 0.78e-5
+
+launch --rwgt_name=gf_weight_0p79Em5
+	set Gf 0.79e-5
+
+launch --rwgt_name=gf_weight_0p80Em5
+	set Gf 0.80e-5
+
+launch --rwgt_name=gf_weight_0p81Em5
+	set Gf 0.81e-5
+
+launch --rwgt_name=gf_weight_0p82Em5
+	set Gf 0.82e-5
+
+launch --rwgt_name=gf_weight_0p83Em5
+	set Gf 0.83e-5
+
+launch --rwgt_name=gf_weight_0p84Em5
+	set Gf 0.84e-5
+
+launch --rwgt_name=gf_weight_0p85Em5
+	set Gf 0.85e-5
+
+launch --rwgt_name=gf_weight_0p86Em5
+	set Gf 0.86e-5
+
+launch --rwgt_name=gf_weight_0p87Em5
+	set Gf 0.87e-5
+
+launch --rwgt_name=gf_weight_0p88Em5
+	set Gf 0.88e-5
+
+launch --rwgt_name=gf_weight_0p89Em5
+	set Gf 0.89e-5
+
+launch --rwgt_name=gf_weight_0p90Em5
+	set Gf 0.90e-5
+
+launch --rwgt_name=gf_weight_0p91Em5
+	set Gf 0.91e-5
+
+launch --rwgt_name=gf_weight_0p92Em5
+	set Gf 0.92e-5
+
+launch --rwgt_name=gf_weight_0p93Em5
+	set Gf 0.93e-5
+
+launch --rwgt_name=gf_weight_0p94Em5
+	set Gf 0.94e-5
+
+launch --rwgt_name=gf_weight_0p95Em5
+	set Gf 0.95e-5
+
+launch --rwgt_name=gf_weight_0p96Em5
+	set Gf 0.96e-5
+
+launch --rwgt_name=gf_weight_0p97Em5
+	set Gf 0.97e-5
+
+launch --rwgt_name=gf_weight_0p98Em5
+	set Gf 0.98e-5
+
+launch --rwgt_name=gf_weight_0p99Em5
+	set Gf 0.99e-5
+
+launch --rwgt_name=gf_weight_1p00Em5
+	set Gf 1.00e-5
+
+launch --rwgt_name=gf_weight_1p01Em5
+	set Gf 1.01e-5
+
+launch --rwgt_name=gf_weight_1p02Em5
+	set Gf 1.02e-5
+
+launch --rwgt_name=gf_weight_1p03Em5
+	set Gf 1.03e-5
+
+launch --rwgt_name=gf_weight_1p04Em5
+	set Gf 1.04e-5
+
+launch --rwgt_name=gf_weight_1p05Em5
+	set Gf 1.05e-5
+
+launch --rwgt_name=gf_weight_1p06Em5
+	set Gf 1.06e-5
+
+launch --rwgt_name=gf_weight_1p07Em5
+	set Gf 1.07e-5
+
+launch --rwgt_name=gf_weight_1p08Em5
+	set Gf 1.08e-5
+
+launch --rwgt_name=gf_weight_1p09Em5
+	set Gf 1.09e-5
+
+launch --rwgt_name=gf_weight_1p10Em5
+	set Gf 1.10e-5
+
+launch --rwgt_name=gf_weight_1p11Em5
+	set Gf 1.11e-5
+
+launch --rwgt_name=gf_weight_1p12Em5
+	set Gf 1.12e-5
+
+launch --rwgt_name=gf_weight_1p13Em5
+	set Gf 1.13e-5
+
+launch --rwgt_name=gf_weight_1p14Em5
+	set Gf 1.14e-5
+
+launch --rwgt_name=gf_weight_1p15Em5
+	set Gf 1.15e-5
+
+launch --rwgt_name=gf_weight_1p16Em5
+	set Gf 1.16e-5
+
+launch --rwgt_name=gf_weight_1p17Em5
+	set Gf 1.17e-5
+
+launch --rwgt_name=gf_weight_1p18Em5
+	set Gf 1.18e-5
+
+launch --rwgt_name=gf_weight_1p19Em5
+	set Gf 1.19e-5
+
+launch --rwgt_name=gf_weight_1p20Em5
+	set Gf 1.20e-5
+
+launch --rwgt_name=gf_weight_1p21Em5
+	set Gf 1.21e-5
+
+launch --rwgt_name=gf_weight_1p22Em5
+	set Gf 1.22e-5
+
+launch --rwgt_name=gf_weight_1p23Em5
+	set Gf 1.23e-5
+
+launch --rwgt_name=gf_weight_1p24Em5
+	set Gf 1.24e-5
+
+launch --rwgt_name=gf_weight_1p25Em5
+	set Gf 1.25e-5
+
+launch --rwgt_name=gf_weight_1p26Em5
+	set Gf 1.26e-5
+
+launch --rwgt_name=gf_weight_1p27Em5
+	set Gf 1.27e-5
+
+launch --rwgt_name=gf_weight_1p28Em5
+	set Gf 1.28e-5
+
+launch --rwgt_name=gf_weight_1p29Em5
+	set Gf 1.29e-5
+
+launch --rwgt_name=gf_weight_1p30Em5
+	set Gf 1.30e-5
+
+launch --rwgt_name=gf_weight_1p31Em5
+	set Gf 1.31e-5
+
+launch --rwgt_name=gf_weight_1p32Em5
+	set Gf 1.32e-5
+
+launch --rwgt_name=gf_weight_1p33Em5
+	set Gf 1.33e-5
+
+launch --rwgt_name=gf_weight_1p34Em5
+	set Gf 1.34e-5
+
+launch --rwgt_name=gf_weight_1p35Em5
+	set Gf 1.35e-5
+
+launch --rwgt_name=gf_weight_1p36Em5
+	set Gf 1.36e-5
+
+launch --rwgt_name=gf_weight_1p37Em5
+	set Gf 1.37e-5
+
+launch --rwgt_name=gf_weight_1p38Em5
+	set Gf 1.38e-5
+
+launch --rwgt_name=gf_weight_1p39Em5
+	set Gf 1.39e-5
+
+launch --rwgt_name=gf_weight_1p40Em5
+	set Gf 1.40e-5
+
+launch --rwgt_name=gf_weight_1p41Em5
+	set Gf 1.41e-5
+
+launch --rwgt_name=gf_weight_1p42Em5
+	set Gf 1.42e-5
+
+launch --rwgt_name=gf_weight_1p43Em5
+	set Gf 1.43e-5
+
+launch --rwgt_name=gf_weight_1p44Em5
+	set Gf 1.44e-5
+
+launch --rwgt_name=gf_weight_1p45Em5
+	set Gf 1.45e-5
+
+launch --rwgt_name=gf_weight_1p46Em5
+	set Gf 1.46e-5
+
+launch --rwgt_name=gf_weight_1p47Em5
+	set Gf 1.47e-5
+
+launch --rwgt_name=gf_weight_1p48Em5
+	set Gf 1.48e-5
+
+launch --rwgt_name=gf_weight_1p49Em5
+	set Gf 1.49e-5
+
+launch --rwgt_name=gf_weight_1p50Em5
+	set Gf 1.50e-5
+
+launch --rwgt_name=gf_weight_1p51Em5
+	set Gf 1.51e-5
+
+launch --rwgt_name=gf_weight_1p52Em5
+	set Gf 1.52e-5
+
+launch --rwgt_name=gf_weight_1p53Em5
+	set Gf 1.53e-5
+
+launch --rwgt_name=gf_weight_1p54Em5
+	set Gf 1.54e-5
+
+launch --rwgt_name=gf_weight_1p55Em5
+	set Gf 1.55e-5
+
+launch --rwgt_name=gf_weight_1p56Em5
+	set Gf 1.56e-5
+
+launch --rwgt_name=gf_weight_1p57Em5
+	set Gf 1.57e-5
+
+launch --rwgt_name=gf_weight_1p58Em5
+	set Gf 1.58e-5
+
+launch --rwgt_name=gf_weight_1p59Em5
+	set Gf 1.59e-5
+
+launch --rwgt_name=gf_weight_1p60Em5
+	set Gf 1.60e-5
+
+launch --rwgt_name=gf_weight_1p61Em5
+	set Gf 1.61e-5
+
+launch --rwgt_name=gf_weight_1p62Em5
+	set Gf 1.62e-5
+
+launch --rwgt_name=gf_weight_1p63Em5
+	set Gf 1.63e-5
+
+launch --rwgt_name=gf_weight_1p64Em5
+	set Gf 1.64e-5
+
+launch --rwgt_name=gf_weight_1p65Em5
+	set Gf 1.65e-5
+
+launch --rwgt_name=gf_weight_1p66Em5
+	set Gf 1.66e-5
+
+launch --rwgt_name=gf_weight_1p67Em5
+	set Gf 1.67e-5
+
+launch --rwgt_name=gf_weight_1p68Em5
+	set Gf 1.68e-5
+
+launch --rwgt_name=gf_weight_1p69Em5
+	set Gf 1.69e-5
+
+launch --rwgt_name=gf_weight_1p70Em5
+	set Gf 1.70e-5
+
+launch --rwgt_name=gf_weight_1p71Em5
+	set Gf 1.71e-5
+
+launch --rwgt_name=gf_weight_1p72Em5
+	set Gf 1.72e-5
+
+launch --rwgt_name=gf_weight_1p73Em5
+	set Gf 1.73e-5
+
+launch --rwgt_name=gf_weight_1p74Em5
+	set Gf 1.74e-5
+
+launch --rwgt_name=gf_weight_1p75Em5
+	set Gf 1.75e-5
+

@@ -24,21 +24,20 @@ eval `scram runtime -sh`
 
 curl -s --insecure https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/SUS-RunIISummer15GS-00148 --retry 2 --create-dirs -o Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py 
 [ -s Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py ] || exit $?;
+sed -i -e "s@processParameters = cms.vstring(@processParameters = cms.vstring('TauDecays:externalMode = 0',@g" Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py
 
-if grep -q "gridpacks" Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py; then
-  if ! grep -q "/cvmfs/cms.cern.ch/phys_generator/gridpacks" Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py; then
-     echo "Gridpack inside fragment is not in cvmfs."
-    exit -1
-  fi
-fi
+#if grep -q "gridpacks" Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py; then
+#  if ! grep -q "/cvmfs/cms.cern.ch/phys_generator/gridpacks" Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py; then
+#     echo "Gridpack inside fragment is not in cvmfs."
+#    exit -1
+#  fi
+#fi
 
 scram b
 cd ../../
 #cmsDriver.py Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py --filein "dbs:/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIIWinter15wmLHE-MCRUN2_71_V1_ext1-v1/LHE" --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10 || exit $? ;
-cmsDriver.py Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py --filein "file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root" --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10 || exit $? ; 
-#cmsDriver.py Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment_TauDecays_externalMode_0.py --filein "file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root" --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10 || exit $? ; 
-#cmsDriver.py Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment_TauDecays_externalMode_1.py --filein "file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root" --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10 || exit $? ; 
-#cmsDriver.py Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment_TauDecays_externalMode_2.py --filein "file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root" --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10 || exit $? ; 
+cmsDriver.py Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py --filein "root://grid-vo-cms.physik.rwth-aachen.de:1094//store/user/tmuller/private_mc/DYJetsToTauTau_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIIWinter15wmLHE-MCRUN2_71_V1_ext1-v1/190926_114548/0008/SUS-RunIIWinter15wmLHE-00098_8043.root" --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10 || exit $? ; 
+
 #cmsRun -e -j SUS-RunIISummer15GS-00148_rt.xml SUS-RunIISummer15GS-00148_1_cfg.py || exit $? ; 
 cmsRun -e -j SUS-RunIISummer15GS-00148_rt.xml -p PSet.py || exit $? ; 
 cp SUS-RunIISummer15GS-00148_rt.xml FrameworkJobReport.xml

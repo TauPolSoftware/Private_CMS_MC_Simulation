@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py --filein file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10
+# with command line options: Configuration/GenProduction/python/SUS-RunIISummer15GS-00148-fragment.py --filein root://grid-vo-cms.physik.rwth-aachen.de:1094//store/user/tmuller/private_mc/DYJetsToTauTau_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIIWinter15wmLHE-MCRUN2_71_V1_ext1-v1/190926_114548/0008/SUS-RunIIWinter15wmLHE-00098_8043.root --fileout file:SUS-RunIISummer15GS-00148.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SUS-RunIISummer15GS-00148_1_cfg.py --no_exec -n 10
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('SIM')
@@ -30,7 +30,7 @@ process.maxEvents = cms.untracked.PSet(
 # Input source
 process.source = cms.Source("PoolSource",
     secondaryFileNames = cms.untracked.vstring(),
-    fileNames = cms.untracked.vstring('file:/home/home2/institut_3b/tmuller/home/cms/htt/generator/DYJetsToLL_M-50_reproduction/LHE/SUS-RunIIWinter15wmLHE-00098.root'),
+    fileNames = cms.untracked.vstring('root://grid-vo-cms.physik.rwth-aachen.de:1094//store/user/tmuller/private_mc/DYJetsToTauTau_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIIWinter15wmLHE-MCRUN2_71_V1_ext1-v1/190926_114548/0008/SUS-RunIIWinter15wmLHE-00098_8043.root'),
     inputCommands = cms.untracked.vstring('keep *', 
         'drop LHEXMLStringProduct_*_*_*'),
     dropDescendantsOfDroppedBranches = cms.untracked.bool(False)
@@ -91,7 +91,8 @@ process.generator = cms.EDFilter("Pythia8HadronizerFilter",
             'MultipartonInteractions:pT0Ref=2.4024', 
             'MultipartonInteractions:ecmPow=0.25208', 
             'MultipartonInteractions:expPow=1.6'),
-        processParameters = cms.vstring('JetMatching:setMad = off', 
+        processParameters = cms.vstring('TauDecays:externalMode = 0', 
+            'JetMatching:setMad = off', 
             'JetMatching:scheme = 1', 
             'JetMatching:merge = on', 
             'JetMatching:jetAlgorithm = 2', 

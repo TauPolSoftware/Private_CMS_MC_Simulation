@@ -12,7 +12,7 @@ generator = cms.EDFilter("Pythia8HadronizerFilter",
     PythiaParameters = cms.PSet(
         pythia8CommonSettingsBlock,
         pythia8CUEP8M1SettingsBlock,
-        processParameters = cms.vstring(
+        processParameters = cms.vstring('TauDecays:externalMode = 0',
             'JetMatching:setMad = off',
             'JetMatching:scheme = 1',
             'JetMatching:merge = on',

@@ -1,0 +1,11 @@
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_1.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_10.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_100.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_101.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_102.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_104.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_105.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_106.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_107.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_108.root
+root://sbgse1.in2p3.fr://dpm/in2p3.fr/home/cms/phedex/store/user/cgrimaul/private_dy_mc/aod_80x/191007_095808/0000/SUS-RunIISummer16DR80Premix-00036_step1_109.root
